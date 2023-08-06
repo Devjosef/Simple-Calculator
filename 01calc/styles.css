@@ -74,7 +74,7 @@ body, h1, h2, h3, p, ul, li {
     background-color: #e0e0e0;
 }
 
-/* Responsive adjustments */
+/* Responsiveness */
 @media (max-width: 480px) {
     .calculator {
         width: 90%;
