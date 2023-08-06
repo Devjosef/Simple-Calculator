@@ -1,2 +1,3 @@
 # Simple-Calculator
-Setting up html boilerplate for the calculator.
+Setting up html for the calculator.
+Completed Html.
