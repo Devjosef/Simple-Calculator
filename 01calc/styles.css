@@ -4,79 +4,125 @@
 
 /* Setup */
 /* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-* {
+*, *::before, *::after {
     box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: normal;
 }
 
-body, h1, h2, h3, p, ul, li {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    list-style: none;
-    font-family: Arial, sans-serif;
 }
 
 /* Structure */
-.calculator {
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 300px;
     margin: 50px auto;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: #dce8f5;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    
 }
 
-.calculator .display {
-    width: 100%;
-    height: 60px;
-    font-size: 24px;
-    text-align: right;
-    border: 1px solid #ccc;
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
     padding: 10px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 4px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 /* Components */
-.calculator .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.number-display {
+    grid-column: 1/-1;
+    grid-row: span 2;
+    width: 100%;
+    height: 120px;
+    font-size: 48px;
+    text-align: right;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #ffffff;
+    outline: none;
+    background-color: rgba(255,255,255, 0.75);
 }
 
-.calculator button {
-    width: 100%;
-    height: 60px;
-    font-size: 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.calculator-grid > button:hover {
+    background-color: #a9a9a9;
 }
+
+
+}
+
 
 /* Modules */
-.calculator .operator {
-    background-color: #ff9800;
+.operator {
+    background-color: #ff9500;
     color: #fff;
+    font-size: 2.5rem;
 }
 
-.calculator .equal {
-    background-color: #4caf50;
+.equal {
+    background-color: #00c2ff;
     color: #fff;
+    font-size: 2.5rem;
 }
 
-.calculator .clear {
-    background-color: #f44336;
+.clear {
+    background-color: #ff3b30;
     color: #fff;
+    font-size: 2.5rem;
 }
 
-.calculator .numeric {
-    background-color: #e0e0e0;
+.number {
+    background-color: #d4d4d4;
+    font-size: 2.5rem;
+}
+
+.decimal {
+    background-color: #808080;
 }
 
 /* Responsiveness */
 @media (max-width: 480px) {
-    .calculator {
+    .calculator-container {
         width: 90%;
     }
 }
