@@ -8,3 +8,4 @@ Changed javascript file from script to calculator.js
 Remodeld the entire project to something closer to what i wanted to create. 
 Complete JS functionality added.
 Merge complete.
+Final project, done and live on github.
